@@ -1,0 +1,9 @@
+def find_nan(df):
+    all_count=len(df)
+    nan_lists={}
+    for col in df.columns:
+        if df[col].isnull().sum():
+                nan_lists[col]=df[col].isnull().sum()
+    for k,v in nan_lists.items():
+        #print(k,v/all_count)
+         print('变量 "{}"  \t 共有 {} 个缺失值\t 占比为 {:.2f}'.format(k,v,v/all_count))
